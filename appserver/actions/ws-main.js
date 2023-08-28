@@ -1,6 +1,6 @@
 'use strict';
-const THIS_MODULE_NAME = 'ws-stage';
-const THIS_MODULE_TITLE = 'Send and receive Websock data related to the stage';
+const THIS_MODULE_NAME = 'ws-main';
+const THIS_MODULE_TITLE = 'Send and receive Websock data related to this applications core features';
 
 var isSetup = false;
 var wssMain = false;
