@@ -168,7 +168,7 @@ module.exports.setup = function setup(scope,options) {
 
         if( !isSetup ){
             wssMain = new $.ws.WebSocketServer({ noServer: true });
-            wsRoom = new $.ws.WebSocketRoom({name:'stage', server: wssMain, onConnect: onConnect, onMessage: onMessage, onSocketAdd: onSocketAdd, onSocketRemove: onSocketRemove});
+            wsRoom = new $.ws.WebSocketRoom({name:'stage', server: wssMain, onConnect: onConnect, onMessage: onMessage, onSocketAdd: onSocketAdd, onSocketRemove: onSocketRemove, pingInterval:0 });
 
             isSetup = true;
             console.log('The stage has created new websock room')
