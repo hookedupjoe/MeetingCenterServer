@@ -36,7 +36,6 @@ module.exports.setup = function setup(scope,options) {
     }
 
     function sendMeetingResponse(theWS, theData){
-        console.log('theData',theData);
         var tmpMsg = theData.message || {};
         
         var tmpName = '';
@@ -72,7 +71,6 @@ module.exports.setup = function setup(scope,options) {
         } else {
             wsRoom.sendDataToClient(theWS.id, {action:'meetingreply', fromid: theWS.userid, status: false, message: 'No longer available'})  
         }
-        console.log('sendMeetingRequest',theWS.id, theWS.userid, theData)
         //wsRoom.sendDataToClient(theWS.id, {action:'chat', fromid: tmpUserID, fromname: tmpName, message: tmpMsg, toname: tmpNameTo})
 
     }
@@ -171,7 +169,7 @@ module.exports.setup = function setup(scope,options) {
             wsRoom = new $.ws.WebSocketRoom({name:'stage', server: wssMain, onConnect: onConnect, onMessage: onMessage, onSocketAdd: onSocketAdd, onSocketRemove: onSocketRemove, pingInterval:0 });
 
             isSetup = true;
-            console.log('The stage has created new websock room')
+            console.log('Meeting Center created new websock room')
         }
         
         return wssMain;
